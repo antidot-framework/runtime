@@ -6,8 +6,6 @@ namespace Antidot\Runtime;
 
 use Antidot\Framework\Application;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
-use Nyholm\Psr7\Factory\Psr17Factory;
-use Nyholm\Psr7Server\ServerRequestCreator;
 use Psr\Container\ContainerInterface;
 use React\Http\HttpServer;
 use React\Socket\SocketServer;
@@ -34,28 +32,23 @@ final class AntidotRunner implements RunnerInterface
 
     private function runAsync(ContainerInterface $container): int
     {
+        /** @var HttpServer $http */
         $http = $container->get(HttpServer::class);
+        /** @var SocketServer $socket */
         $socket = $container->get(SocketServer::class);
+        $runner = new AsyncRunner($http, $socket);
 
-        $http->listen($socket);
-
-        return 0;
+        return $runner->run();
     }
 
     private function runSync(ContainerInterface $container): int
     {
+        /** @var Application $application */
         $application = $container->get(Application::class);
-        $sapi = new SapiEmitter();
-        $psr17Factory = new Psr17Factory();
-        $creator = new ServerRequestCreator(
-            $psr17Factory, // ServerRequestFactory
-            $psr17Factory, // UriFactory
-            $psr17Factory, // UploadedFileFactory
-            $psr17Factory  // StreamFactory
-        );
+        /** @var SapiEmitter $sapi */
+        $sapi = $container->get(SapiEmitter::class);
+        $runner = new SyncRunner($application, $sapi);
 
-        $sapi->emit($application->handle($creator->fromGlobals()));
-
-        return 0;
+        return $runner->run();
     }
 }
