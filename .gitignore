@@ -1,0 +1,6 @@
+/.phpunit.result.cache
+/.php-version
+/composer.lock
+/coverage
+/infection.log
+/vendor
