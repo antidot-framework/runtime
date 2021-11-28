@@ -6,7 +6,7 @@ on:
   pull_request:
   push:
     branches:
-      - "2.x.x"
+      - "1.x.x"
 
 jobs:
   mutation-tests:
@@ -19,6 +19,8 @@ jobs:
         dependencies:
           - "locked"
         php-version:
+          - "7.4"
+          - "8.0"
           - "8.1"
         operating-system:
           - "ubuntu-latest"
