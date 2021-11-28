@@ -1,7 +1,6 @@
-Antidot Framework
+Antidot Framework Runtime
 =================
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/antidot-framework/antidot-framework/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/antidot-framework/antidot-framework/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/antidot-framework/antidot-framework/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/antidot-framework/antidot-framework/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/antidot-framework/antidot-framework/badges/build.png?b=master)](https://scrutinizer-ci.com/g/antidot-framework/antidot-framework/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/antidot-framework/antidot-framework/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
