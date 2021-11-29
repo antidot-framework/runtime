@@ -39,12 +39,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Antidot\\Runtime\\": "src"
+            "Antidot\\Runtime\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Antidot\\Test\\Runtime\\": "test"
+            "Antidot\\Test\\Runtime\\": "test/"
         }
     },
     "scripts": {
