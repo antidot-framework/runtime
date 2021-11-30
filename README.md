@@ -10,4 +10,4 @@ The Runtime allows running Antidot Framework applications both sync as in async 
 
 ## Requirements
 
-* PHP >= >=8.1
+* PHP >= 8.1
