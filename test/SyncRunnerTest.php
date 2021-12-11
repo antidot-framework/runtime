@@ -11,13 +11,20 @@ use Antidot\Framework\Router\Router;
 use Antidot\Runtime\SyncRunner;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
 use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Server\MiddlewareInterface;
 
 final class SyncRunnerTest extends TestCase
 {
     public function testItShouldEmitApplicationResponse(): void
     {
-        $middlewareFactory = $this->createMock(MiddlewareFactory::class);
+        $container = $this->createMock(ContainerInterface::class);
+        $container->expects(self::once())
+            ->method('get')
+            ->with('test_middleware')
+            ->willReturn($this->createMock(MiddlewareInterface::class));
+        $middlewareFactory = new MiddlewareFactory($container);
         $sapi = $this->createMock(SapiEmitter::class);
         $sapi->expects(self::once())
             ->method('emit')

@@ -8,6 +8,7 @@ use Antidot\Framework\Application;
 use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7Server\ServerRequestCreator;
+use React\EventLoop\Loop;
 
 final class SyncRunner
 {
@@ -33,6 +34,9 @@ final class SyncRunner
         $this->sapi->emit(
             $this->application->handle($this->responseFactory->fromGlobals())
         );
+
+        $loop = Loop::get();
+        $loop->run();
 
         return 0;
     }
