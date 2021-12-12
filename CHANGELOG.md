@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/antidot-framework/runtime/tree/0.2.0) (2021-12-12)
+
+[Full Changelog](https://github.com/antidot-framework/runtime/compare/0.1.0...0.2.0)
+
+**Fixed bugs:**
+
+- Fix incompatibilities with framework package [\#7](https://github.com/antidot-framework/runtime/pull/7) ([kpicaza](https://github.com/kpicaza))
+
+**Merged pull requests:**
+
+- Fix typo [\#6](https://github.com/antidot-framework/runtime/pull/6) ([peter279k](https://github.com/peter279k))
+
 ## [0.1.0](https://github.com/antidot-framework/runtime/tree/0.1.0) (2021-11-29)
 
 [Full Changelog](https://github.com/antidot-framework/runtime/compare/bacf12aeff81d8f9aa4b6d97989c35cc3829f635...0.1.0)
