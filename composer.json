@@ -20,7 +20,7 @@
         "nyholm/psr7-server": "^1.0",
         "psr/http-server-middleware": "^1.0",
         "react/http": "^1.5",
-        "symfony/runtime": "^5.3"
+        "symfony/runtime": "^5.3 || ^6.0"
     },
     "require-dev": {
         "infection/infection": "^0.25",
