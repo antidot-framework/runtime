@@ -19,6 +19,7 @@
         "nyholm/psr7": "^1.4",
         "nyholm/psr7-server": "^1.0",
         "psr/http-server-middleware": "^1.0",
+        "react/async": "@dev",
         "react/http": "^1.5",
         "symfony/runtime": "^5.3"
     },

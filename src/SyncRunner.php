@@ -9,6 +9,7 @@ use Laminas\HttpHandlerRunner\Emitter\SapiEmitter;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7Server\ServerRequestCreator;
 use React\EventLoop\Loop;
+use function React\Async\async;
 
 final class SyncRunner
 {
@@ -31,11 +32,13 @@ final class SyncRunner
 
     public function run(): int
     {
-        $this->sapi->emit(
-            $this->application->handle($this->responseFactory->fromGlobals())
-        );
-
         $loop = Loop::get();
+        async(function (): void {
+            $this->sapi->emit(
+                $this->application->handle($this->responseFactory->fromGlobals())
+            );
+        });
+
         $loop->run();
 
         return 0;
