@@ -23,7 +23,7 @@
         "symfony/runtime": "^5.3"
     },
     "require-dev": {
-        "infection/infection": "^0.25",
+        "infection/infection": "^0.25 || ^0.27",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^1.2",
         "phpunit/phpunit": "^9.0",
