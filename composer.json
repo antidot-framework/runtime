@@ -14,20 +14,20 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
-        "antidot-fw/framework": "^2.0.0BETA1",
+        "php": "~8.1.0 || ~8.2.0",
+        "antidot-fw/framework": "^2.0.0",
+        "laminas/laminas-httphandlerrunner": "^2.6",
         "nyholm/psr7": "^1.4",
         "nyholm/psr7-server": "^1.0",
         "psr/http-server-middleware": "^1.0",
         "react/http": "^1.5",
-        "symfony/runtime": "^5.3"
+        "symfony/runtime": "^5.3 || ^6.3"
     },
     "require-dev": {
-        "infection/infection": "^0.25",
         "phpro/grumphp": "^1.0",
         "phpstan/phpstan": "^1.2",
         "phpunit/phpunit": "^9.0",
-        "roave/infection-static-analysis-plugin": "^1.10",
+        "roave/infection-static-analysis-plugin": "^1.32",
         "squizlabs/php_codesniffer": "^3.4",
         "symfony/var-dumper": "^5.0",
         "vimeo/psalm": "^4.0.0"
@@ -58,6 +58,11 @@
         "test": "phpunit --colors=always"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true,
+            "phpro/grumphp": true,
+            "symfony/runtime": true
+        }
     }
 }

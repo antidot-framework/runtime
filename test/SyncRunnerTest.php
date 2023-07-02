@@ -21,6 +21,10 @@ final class SyncRunnerTest extends TestCase
     {
         $container = $this->createMock(ContainerInterface::class);
         $container->expects(self::once())
+            ->method('has')
+            ->with('test_middleware')
+            ->willReturn(true);
+        $container->expects(self::once())
             ->method('get')
             ->with('test_middleware')
             ->willReturn($this->createMock(MiddlewareInterface::class));
